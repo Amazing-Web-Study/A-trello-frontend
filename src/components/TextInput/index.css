@@ -1,0 +1,20 @@
+.text-input{
+    font-size: 14px;
+    background-color: #FAFBFC;
+    border: 2px solid #DFE1E6;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    height: 44px;
+    -webkit-transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+    transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+    width: 100%;
+    padding: .5em;
+}
+
+.text-input:focus {
+    background-color: white;
+    border: 2px solid #4C9AFF;
+    box-shadow: 0 0 0;
+    outline: #4C9AFF auto 1px;
+}
