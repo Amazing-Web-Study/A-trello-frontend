@@ -1,0 +1,27 @@
+.cardlist {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-radius: 4px;
+    min-width: 272px;
+    max-height: 100%;
+    margin: 0px 6px;
+    padding: 0 6px;
+    background-color: #ebecf0;
+}
+
+.cardlist-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 6px;
+    font-weight: bold;
+}
+
+.cardlist-footer {
+    margin: 12px 6px;
+    font-size: 14px;
+}
+
+.cardlist-footer button {
+    border: 0;
+}
