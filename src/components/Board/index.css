@@ -1,7 +1,16 @@
 .board{
-    bottom: 0;
+    margin-top: 40px;
     left: 0;
     overflow-x: auto;
     overflow-y: hidden;
     position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 10px 15px 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
