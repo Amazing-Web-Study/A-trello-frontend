@@ -1,0 +1,70 @@
+.kanban-header-logo{
+    background-image: url(https://a.trellocdn.com/prgb/dist/images/header-logo-spirit-loading.87e1af770a49ce8e84e3.gif);
+    width: 80px;
+    margin: 1px 0;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+    flex-shrink: 0;
+}
+
+.kanban-header-logo:hover{
+    opacity: 0.8;
+}
+
+.kanban-header-left{
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.kanban-header-right{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.kanban-header-profile{
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    font-size: 14px;
+
+    align-items: center;
+    background-color: #DFE1E6;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    border-radius: 100%;
+    box-sizing: border-box;
+    color: #172B4D;
+    display: inline-flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    opacity: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.kanban-header {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-basis: 100%;
+    background-color: rgba(0, 0, 0, 0.32);
+    box-sizing: border-box;
+    max-height: 40px;
+    overflow: hidden;
+    padding: 4px 4px;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 999;
+}
