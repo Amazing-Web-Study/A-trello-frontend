@@ -1,0 +1,32 @@
+.card-wrapper {
+  display: block;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  min-height: 30px;
+  max-width: 272px;
+  border-radius: 3px;
+  box-shadow: 1.5px 1.5px 0 #091e4240;
+  background-color: #ffffff;
+  margin-bottom: 4px;
+  padding: 6px 8px 2px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card-title {
+  display: flex;
+  min-height: 30%;
+  width: 100%;
+  margin: 2px 0px;
+}
+
+.card-description {
+  display: flex;
+  min-height: 50%;
+  width: 100%;
+  margin: 2px 0px;
+}
