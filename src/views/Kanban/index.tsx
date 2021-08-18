@@ -1,33 +1,15 @@
 import React from 'react';
 import "./Kanban.css";
+import Header from "../../components/Header";
+import Board from "../../components/Board";
 
 
 const Kanban: React.FC = () => {
   return (
     <div className="kanban">
-      <div className="kanban-header">AWS</div>
+        <Header/>
       <div className="kanban-content">
-        <div className="list">
-          Work
-          <div className="card">card</div>
-          <div className="card">card</div>
-          <div className="card">card</div>
-          <div className="card">card</div>
-          <div className="card">card</div>
-        </div>
-        <div className="list">Work</div>
-        <div className="list">
-          Work
-          <div className="card-test">card</div>
-          <div className="card-test">card</div>
-          <div className="card-test">card</div>
-        </div>
-        <div className="list">Work</div>
-        <div className="list">Work</div>
-        <div className="list">Work</div>
-        <div className="list">Work</div>
-        <div className="list">Work</div>
-        <div className="list">Work</div>
+          <Board/>
       </div>
     </div>
   );
