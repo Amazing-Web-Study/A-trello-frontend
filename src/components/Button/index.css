@@ -1,0 +1,62 @@
+.button:disabled {
+    background: #E2E4E6;
+    color: hsl(0, 0%, 55%);
+}
+
+.button {
+    background: #61BD4F;
+    color: #fff;
+    border-radius: .3em;
+    width: 100%;
+    height: 36px;
+    border: 0;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: .8em;
+    padding: .6em 1.3em;
+    position: relative;
+    text-decoration: none;
+}
+
+.blue-button {
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex !important;
+    opacity: 1;
+    margin: 0 2px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    border-width: 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: inherit;
+    font-style: normal;
+    font-family: inherit;
+    font-weight: 500;
+    max-width: 100%;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+    white-space: nowrap;
+    background: rgb(0, 82, 204);
+    cursor: pointer;
+    padding: 0 10px;
+    vertical-align: middle;
+    width: 100%;
+    color: rgb(255, 255, 255) !important;
+    height: 40px !important;
+    line-height: 40px !important;
+}
+
+.blue-button:hover {
+    background: rgb(0, 101, 255);
+    text-decoration: inherit;
+    transition-duration: 0s, 0.15s;
+    color: rgb(255, 255, 255) !important;
+}
