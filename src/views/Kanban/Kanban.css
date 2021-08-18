@@ -2,15 +2,6 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #f7f7f7;
-}
-
-.kanban-header {
-  display: flex;
-  min-height: 40px;
-  max-height: 40px;
-  justify-content: center;
-  align-items: center;
 }
 
 .kanban-content {
@@ -22,7 +13,13 @@
   padding: 10px 10px 15px 10px;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: dimgray;
+
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background-position: 50%;
+  background-size: cover;
+  background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1339x1920/9517dd5c09963f9d9f0d63fdeef1475d/photo-1627402416790-6d56a206e9f6.jpg");
 }
 
 .list {
