@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState} from 'react';
 import './index.css'
+import axios from 'axios';
 
 interface CardProps {
     title: string;
@@ -19,7 +20,7 @@ const CardList: React.FC<CardListProps> = (props) => {
                 <div className="cardlist-title-menu">+</div>
             </div>
             {
-                props.card.map((e, i) => {
+                props.card?.map((e, i) => {
                     return (
                         <div className="card" key={i}>
                             {e.title}
