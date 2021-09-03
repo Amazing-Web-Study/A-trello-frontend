@@ -32,13 +32,16 @@ const CardList: React.FC<CardListProps> = (props) => {
                 <div className="cardlist-title-text">{props.title}</div>
                 <div className="cardlist-title-menu">+</div>
             </div>
-            {
-                props.card?.map((e: any, i: any) => {
-                    return (
-                        <Card key={i} title={e.title} description={e.description} />
-                    )
-                })
-            }
+            <div className="cardlist-list">
+                {
+                    props.card?.map((e: any, i: any) => {
+                        return (
+                            <Card key={i} title={e.title} description={e.description} />
+                        )
+                    })
+                }
+            </div>
+
             <div className="cardlist-footer">
                 <button onClick={onAdd}>+ Add A Card</button>
             </div>
