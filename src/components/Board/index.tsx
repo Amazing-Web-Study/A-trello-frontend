@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./index.css";
 import CardList from '../../components/CardList/'
+import CardListBtn from '../../components/CardListBtn/'
 import axios from "axios";
 
 
@@ -75,6 +76,7 @@ const Board: React.FC = () => {
                     )
                 })
             }
+            <CardListBtn />
         </div>
     );
 }
