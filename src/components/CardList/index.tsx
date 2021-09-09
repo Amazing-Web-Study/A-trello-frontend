@@ -26,11 +26,22 @@ const CardList: React.FC<CardListProps> = (props) => {
         });
     }
 
+    const DeleteList = async() => {
+        console.log("id: ", props._id);
+        await axios.delete(`http://localhost:3030/list/${props._id}`).then((res: any) => {
+            console.log(res.data);
+        });
+        window.location.reload();
+    }
+
     return (
         <div className="cardlist">
             <div className="cardlist-title">
                 <div className="cardlist-title-text">{props.title}</div>
-                <div className="cardlist-title-menu">+</div>
+                <div className="cardlist-title-menu">
+                    <div className="cardlist-title-menu-icon">+</div>
+                    <div onClick={() => DeleteList()}>x</div>
+                </div>
             </div>
             <div className="cardlist-list">
                 {
