@@ -6,6 +6,7 @@ import axios from "axios";
 
 
 const Board: React.FC = () => {
+    const [selectedCardItem, setSelectedCardItem] = useState<any>()
     const [cardList, setCardList] = useState<any>()
 
     useEffect(() => {
@@ -75,7 +76,7 @@ const Board: React.FC = () => {
             {
                 cardList?.map((e: any, i: any) => {
                     return (
-                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} deleteCard={deleteCard} deleteList={deleteList} addCard={addCard} updateCard={updateCard} updateList={updateList} />
+                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} deleteCard={deleteCard} deleteList={deleteList} addCard={addCard} updateCard={updateCard} updateList={updateList} setSelectedCardItem={setSelectedCardItem} selectedCardItem={selectedCardItem}/>
                     )
                 })
             }

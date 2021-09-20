@@ -18,6 +18,8 @@ interface CardListProps {
     addCard: any;
     updateCard: any;
     updateList: any;
+    selectedCardItem: any;
+    setSelectedCardItem: any;
 }
 
 const CardList: React.FC<CardListProps> = (props) => {
@@ -44,7 +46,7 @@ const CardList: React.FC<CardListProps> = (props) => {
                 {
                     props.card?.map((e: any, i: any) => {
                         return (
-                            <Card key={i} list_id={props._id} id={e._id} title={e.title} description={e.description} deleteCard={props.deleteCard} updateCard={props.updateCard} />
+                            <Card key={i} list_id={props._id} id={e._id} title={e.title} description={e.description} deleteCard={props.deleteCard} updateCard={props.updateCard} setSelectedCardItem={props.setSelectedCardItem} selectedCardItem={props.selectedCardItem}/>
                         )
                     })
                 }
