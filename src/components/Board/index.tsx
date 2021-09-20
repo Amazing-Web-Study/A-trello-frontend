@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import "./index.css";
 import CardList from '../../components/CardList/'
+import CardListBtn from '../../components/CardListBtn/'
 import axios from "axios";
 
 
@@ -69,12 +70,13 @@ const Board: React.FC = () => {
         <div className="board">
             {
                 cardList?.map((e: any, i: any) => {
-                    console.log(e)
+                    // console.log(e._id)
                     return (
-                        <CardList key={i} title={e.title} card={e.card}/>
+                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} />
                     )
                 })
             }
+            <CardListBtn />
         </div>
     );
 }

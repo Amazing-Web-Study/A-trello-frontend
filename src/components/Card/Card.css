@@ -5,7 +5,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   min-height: 30px;
   max-width: 272px;
   border-radius: 3px;
@@ -19,9 +18,19 @@
 
 .card-title {
   display: flex;
+  align-items: center;
+  flex-direction: row;
   min-height: 30%;
   width: 100%;
   margin: 2px 0px;
+  font-weight: bold;
+}
+
+.card-title-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
 }
 
 .card-description {
@@ -29,4 +38,18 @@
   min-height: 50%;
   width: 100%;
   margin: 2px 0px;
+  font-size: 12px;
+}
+
+.card-title-wrapper button {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: 0;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.card-title-wrapper button:hover {
+  background-color: #ebcdeb;
 }

@@ -4,6 +4,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     position: absolute;
+    height: 100vh;
 
     display: flex;
     flex-direction: row;
