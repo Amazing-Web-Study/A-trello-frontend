@@ -22,7 +22,7 @@
   flex-direction: row;
   min-height: 30%;
   width: 100%;
-  margin: 2px 0px;
+  margin: 2px 0px 18px 0;
   font-weight: bold;
 }
 
@@ -31,6 +31,10 @@
   justify-content: flex-end;
   align-items: center;
   flex: 1;
+}
+
+.card-title-wrapper button:first-child{
+  margin-right: 6px;
 }
 
 .card-description {

@@ -33,3 +33,11 @@
     border: 0;
     cursor: pointer;
 }
+
+.cardlist-title-menu {
+    display: flex;
+}
+
+.cardlist-title-menu-icon {
+    margin-right: 12px;
+}
