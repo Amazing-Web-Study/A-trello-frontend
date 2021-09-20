@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./Card.css";
 import axios from 'axios';
 
@@ -11,27 +11,29 @@ interface CardProps {
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  
-  // useEffect(() => {
-    
-  // }, [props])
+  const [title, setTitle] = useState<any>();
+  const [description, setDescription] = useState<any>();
+
+  useEffect(() => {
+    setTitle(props.title);
+    setDescription(props.description);
+  }, [])
+
   return (
     <div className="card-wrapper">
       <div className="card">
-        <div className="card-title">
-          {props.title}
-          <div className="card-title-wrapper">
-            <button>
-              @
-            </button>
-            <button onClick={() => {props.deleteCard(props.list_id, props.id)}}>
-              X
-            </button>
-          </div>
+        <div className="card-title-wrapper">
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} onBlur={(e) => { console.log(e) }} />
+          <button onClick={() => { props.deleteCard(props.list_id, props.id) }}>
+            X
+          </button>
         </div>
-        <div className="card-description">{props.description}</div>
+        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} onBlur={(e) => {
+          console.log(e)
+        }} />
+        {/* <div className="card-description">{props.description}</div> */}
       </div>
-    </div>
+    </div >
   );
 }
 
