@@ -12,18 +12,26 @@ const Board: React.FC = () => {
         fetchList()
     }, []);
 
-
-    const addList = async() => {
-        await axios.post('http://localhost:3030/list', {
-          title: "List Add",
-          cardList: []
-        }).then(async(res: any) => {
-          console.log(res);
-          await fetchList()
+    const addList = async () => {
+        axios.post('http://localhost:3030/list', {
+            title: "List Add",
+            cardList: []
+        }).then(async (res: any) => {
+            console.log(res);
+            await fetchList()
         });
-      }
-    
-    const addCard = async(list_id: string) => {
+    }
+
+    const updateList = async (list_id: string, list_title: string) => {
+        await axios.put(`http://localhost:3030/list/${list_id}`, {
+            title: `${list_title}`
+        }).then(async (res: any) => {
+            console.log(res.data);
+            await fetchList();
+        });
+    }
+
+    const addCard = async (list_id: string) => {
         await axios.post(`http://localhost:3030/list/${list_id}/card`, {
             title: "Added Card",
             description: "Added Card by Button"
@@ -33,7 +41,17 @@ const Board: React.FC = () => {
         });
     }
 
-    const deleteList = async(list_id: string) => {
+    const updateCard = async (list_id: string, id: string, card_title: string, card_description: string) => {
+        await axios.put(`http://localhost:3030/list/${list_id}/${id}`, {
+            title: `${card_title}`,
+            description: `${card_description}`
+        }).then(async (res: any) => {
+            console.log(res.data);
+            await (fetchList());
+        });
+    }
+
+    const deleteList = async (list_id: string) => {
         await axios.delete(`http://localhost:3030/list/${list_id}`).then(async (res: any) => {
             console.log(res.data);
             await fetchList()
@@ -57,11 +75,11 @@ const Board: React.FC = () => {
             {
                 cardList?.map((e: any, i: any) => {
                     return (
-                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} deleteCard={deleteCard} deleteList={deleteList} addCard={addCard}/>
+                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} deleteCard={deleteCard} deleteList={deleteList} addCard={addCard} updateCard={updateCard} updateList={updateList} />
                     )
                 })
             }
-            <CardListBtn addList={addList}/>
+            <CardListBtn addList={addList} />
         </div>
     );
 }

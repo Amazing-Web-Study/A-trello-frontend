@@ -16,11 +16,24 @@
   justify-content: center;
 }
 
+.card input {
+  display: flex;
+  min-height: 50%;
+  width: 100%;
+  margin: 2px 0px;
+  font-size: 12px;
+  border-width: 0px;
+}
+
+.card input::placeholder{
+  color: #000000;
+}
+
 .card-title {
   display: flex;
   align-items: center;
   flex-direction: row;
-  min-height: 30%;
+  min-height: 50%;
   width: 100%;
   margin: 2px 0px 18px 0;
   font-weight: bold;
@@ -30,7 +43,24 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  flex: 1;
+  flex-direction: row;
+  min-height: 30%;
+  width: 100%;
+  margin: 2px 0px 18px 0;
+}
+
+.card-title-wrapper input{
+  display: flex;
+  border-width: 0px;
+  width: 100%;
+  min-height: 30%;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-title-wrapper input::placeholder{
+  color: #000000;
+  font-weight: bold;
 }
 
 .card-title-wrapper button:first-child{
