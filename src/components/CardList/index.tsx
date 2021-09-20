@@ -12,6 +12,7 @@ interface CardListProps {
     _id: string;
     title: string;
     card: CardProps[];
+    deleteCard: any;
 }
 
 const CardList: React.FC<CardListProps> = (props) => {
@@ -47,7 +48,7 @@ const CardList: React.FC<CardListProps> = (props) => {
                 {
                     props.card?.map((e: any, i: any) => {
                         return (
-                            <Card key={i} title={e.title} description={e.description} />
+                            <Card key={i} list_id={props._id} id={i} title={e.title} description={e.description} deleteCard={props.deleteCard} />
                         )
                     })
                 }

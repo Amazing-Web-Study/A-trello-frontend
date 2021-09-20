@@ -57,14 +57,20 @@ const Board: React.FC = () => {
     const [cardList, setCardList] = useState<any>()
 
     useEffect(() => {
-        async function fetchList() {
-            axios.get('http://localhost:3030/list').then((res: any) => {
-                setCardList(res.data)
-            })
-        }
-
         fetchList()
-    }, []);
+    }, [cardList]);
+
+    const deleteCard = async (list_id: string, id: string) => {
+        await axios.put(`http://localhost:3030/list/${list_id}/${id}`).then(async (res: any) => {
+            console.log(res.data);
+            await fetchList()
+        });
+    }
+    async function fetchList() {
+        axios.get('http://localhost:3030/list').then((res: any) => {
+            setCardList(res.data)
+        })
+    }
 
     return (
         <div className="board">
@@ -72,7 +78,7 @@ const Board: React.FC = () => {
                 cardList?.map((e: any, i: any) => {
                     // console.log(e._id)
                     return (
-                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} />
+                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} deleteCard={deleteCard} />
                     )
                 })
             }
