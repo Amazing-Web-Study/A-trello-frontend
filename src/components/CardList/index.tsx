@@ -13,15 +13,16 @@ interface CardListProps {
     title: string;
     card: CardProps[];
     deleteCard: any;
+    selectedCardItem: any;
+    setSelectedCardItem: any;
 }
 
 const CardList: React.FC<CardListProps> = (props) => {
 
-    async function onAdd() {
-        console.log("id: ", props._id);
-        await axios.post(`http://localhost:3030/list/${props._id}/card`, {
-            title: "Added Card",
-            description: "Added Card by Button"
+    async function onAdd(list_id: any, title?:string, description?:string) {
+        await axios.post(`http://localhost:3030/list/${list_id}/card`, {
+            title: title ?? "Added Card",
+            description: description ?? "Added Card by Button"
         }).then((res: any) => {
             console.log(res.data);
         });
@@ -48,14 +49,14 @@ const CardList: React.FC<CardListProps> = (props) => {
                 {
                     props.card?.map((e: any, i: any) => {
                         return (
-                            <Card key={i} list_id={props._id} id={i} title={e.title} description={e.description} deleteCard={props.deleteCard} />
+                            <Card key={i} list_id={props._id} id={e._id} title={e.title} description={e.description} onAdd={onAdd} deleteCard={props.deleteCard} setSelectedCardItem={props.setSelectedCardItem} selectedCardItem={props.selectedCardItem}/>
                         )
                     })
                 }
             </div>
 
             <div className="cardlist-footer">
-                <button onClick={onAdd}>+ Add A Card</button>
+                <button onClick={() => onAdd(props._id)}>+ Add A Card</button>
             </div>
         </div>
     );
