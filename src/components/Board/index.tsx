@@ -6,62 +6,42 @@ import axios from "axios";
 
 
 const Board: React.FC = () => {
-    const [data, setData] = useState([
-        {
-            id: 1,
-            title: "To-Do",
-            card: [{
-                title: 'test',
-                description: 'test1'
-            }, {
-                title: 'test2',
-                description: 'test12'
-            }, {
-                title: 'test3',
-                description: 'test13'
-            }
-            ]
-        },
-        {
-            id: 2,
-            title: "Working",
-            card: [{
-                title: 'test',
-                description: 'test1'
-            }, {
-                title: 'test2',
-                description: 'test12'
-            }, {
-                title: 'test3',
-                description: 'test13'
-            }
-            ]
-        },
-        {
-            id: 3,
-            title: "Done",
-            card: [{
-                title: 'test',
-                description: 'test1'
-            }, {
-                title: 'test2',
-                description: 'test12'
-            }, {
-                title: 'test3',
-                description: 'test13'
-            }
-            ]
-        }
-    ]);
-
     const [cardList, setCardList] = useState<any>()
 
     useEffect(() => {
         fetchList()
-    }, [cardList]);
+    }, []);
+
+
+    const addList = async() => {
+        axios.post('http://localhost:3030/list', {
+          title: "List Add",
+          cardList: []
+        }).then(async(res: any) => {
+          console.log(res);
+          await fetchList()
+        });
+      }
+    
+    const addCard = async(list_id: string) => {
+        await axios.post(`http://localhost:3030/list/${list_id}/card`, {
+            title: "Added Card",
+            description: "Added Card by Button"
+        }).then(async (res: any) => {
+            console.log(res.data);
+            await fetchList()
+        });
+    }
+
+    const deleteList = async(list_id: string) => {
+        await axios.delete(`http://localhost:3030/list/${list_id}`).then(async (res: any) => {
+            console.log(res.data);
+            await fetchList()
+        });
+    }
 
     const deleteCard = async (list_id: string, id: string) => {
-        await axios.put(`http://localhost:3030/list/${list_id}/${id}`).then(async (res: any) => {
+        await axios.delete(`http://localhost:3030/list/${list_id}/${id}`).then(async (res: any) => {
             console.log(res.data);
             await fetchList()
         });
@@ -76,13 +56,12 @@ const Board: React.FC = () => {
         <div className="board">
             {
                 cardList?.map((e: any, i: any) => {
-                    // console.log(e._id)
                     return (
-                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} deleteCard={deleteCard} />
+                        <CardList key={i} _id={e._id} title={e.title} card={e.cardList} deleteCard={deleteCard} deleteList={deleteList} addCard={addCard}/>
                     )
                 })
             }
-            <CardListBtn />
+            <CardListBtn addList={addList}/>
         </div>
     );
 }

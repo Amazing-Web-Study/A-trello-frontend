@@ -5,7 +5,7 @@ import axios from 'axios';
 interface CardProps {
   title: string | undefined;
   description: string | undefined;
-  id: number;
+  id: string;
   list_id: string;
   deleteCard: any;
 };
