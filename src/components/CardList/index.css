@@ -16,6 +16,15 @@
     font-weight: bold;
 }
 
+.cardlist-title input{
+    display: flex;
+    background-color: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    border-width: 0px;
+}
+
+
 .cardlist-list{
     display:flex;
     flex-direction: column;
@@ -40,4 +49,5 @@
 
 .cardlist-title-menu-icon {
     margin-right: 12px;
+    cursor: pointer;
 }
