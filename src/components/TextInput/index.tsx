@@ -11,7 +11,7 @@ const TextInput: React.FC<TextInputProps> = (props) => {
     return (
         <input type={"text"}
                className={'text-input'}
-               onChange={props.onChange}
+               onChange={e => props.onChange(e.target.value)}
                placeholder={props.placeholder}
                style={props.style}/>
     );

@@ -14,7 +14,7 @@ const Board: React.FC = () => {
 
 
     const addList = async() => {
-        axios.post('http://localhost:3030/list', {
+        await axios.post('http://localhost:3030/list', {
           title: "List Add",
           cardList: []
         }).then(async(res: any) => {
@@ -46,8 +46,8 @@ const Board: React.FC = () => {
             await fetchList()
         });
     }
-    async function fetchList() {
-        axios.get('http://localhost:3030/list').then((res: any) => {
+    const fetchList = async() => {
+        await axios.get('http://localhost:3030/list').then((res: any) => {
             setCardList(res.data)
         })
     }
