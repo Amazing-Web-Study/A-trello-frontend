@@ -5,16 +5,13 @@ import axios from 'axios';
 interface CardProps {
   title: string | undefined;
   description: string | undefined;
-  id: number;
+  id: string;
   list_id: string;
   deleteCard: any;
 };
 
 const Card: React.FC<CardProps> = (props) => {
   
-  // useEffect(() => {
-    
-  // }, [props])
   return (
     <div className="card-wrapper">
       <div className="card">
