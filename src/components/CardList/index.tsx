@@ -46,7 +46,7 @@ const CardList: React.FC<CardListProps> = (props) => {
                 {
                     props.card?.map((e: any, i: any) => {
                         return (
-                            <Card key={i} list_id={props._id} id={e._id} title={e.title} description={e.description} deleteCard={props.deleteCard} updateCard={props.updateCard} setSelectedCardItem={props.setSelectedCardItem} selectedCardItem={props.selectedCardItem}/>
+                            <Card key={i} list_id={props._id} id={e._id} title={e.title} description={e.description} addCard={props.addCard} deleteCard={props.deleteCard} updateCard={props.updateCard} setSelectedCardItem={props.setSelectedCardItem} selectedCardItem={props.selectedCardItem}/>
                         )
                     })
                 }

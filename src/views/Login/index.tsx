@@ -57,7 +57,7 @@ const Example: React.FC = () => {
                         <button onClick={() => login()}>Log In</button>
                     </div>
                 </div>
-                <div className="login-box-signup">Sign Up</div>
+                <div className="login-box-signup" onClick={() => history.push('/signup')}>Sign Up</div>
             </div>
         </div>
     );

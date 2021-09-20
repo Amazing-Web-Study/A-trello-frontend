@@ -12,7 +12,7 @@ interface CardProps {
   updateCard: any;
   setSelectedCardItem: any;
   selectedCardItem: any;
-  onAdd: any;
+  addCard: any;
 };
 
 const Card: React.FC<CardProps> = (props) => {
@@ -28,15 +28,13 @@ const Card: React.FC<CardProps> = (props) => {
       // var rect = e.currentTarget.getBoundingClientRect();
       // var x = e.clientX - rect.left;
       // var y = e.clientY - rect.top;
+    // return false;
       e.preventDefault()
-      // return false;
   }
       
   function onDrop(e:any, target_list_id: any) {
       const {list_id, id, title, description} = props.selectedCardItem
-      props.onAdd(target_list_id, title, description)
-      console.log(list_id, id)
-      console.log(target_list_id)
+      props.addCard(target_list_id, title, description)
       props.deleteCard(list_id, id)
       e.preventDefault()
   }

@@ -32,10 +32,10 @@ const Board: React.FC = () => {
         });
     }
 
-    const addCard = async (list_id: string) => {
+    const addCard = async (list_id: string, title?: string, description?: string) => {
         await axios.post(`http://localhost:3030/list/${list_id}/card`, {
-            title: "Added Card",
-            description: "Added Card by Button"
+            title: title ?? "Added Card",
+            description: description ?? "Added Card by Button"
         }).then(async (res: any) => {
             console.log(res.data);
             await fetchList()
