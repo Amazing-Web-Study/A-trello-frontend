@@ -68,3 +68,19 @@
     width:100%;
     z-index: 999;
 }
+
+.kanban-header-name {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0 12px;
+}
+
+.kanban-header-logout {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    font-size: 14px;
+    text-decoration: underline;
+}
